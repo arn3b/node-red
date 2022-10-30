@@ -30,8 +30,8 @@
     ],
     "dependencies": {
         "node-red": "3.0.2",
-        "node-red-contrib-buffer-parser": "~3.1.7",
-        "node-red-contrib-modbus": "~5.14.1"
+        "node-red-contrib-buffer-parser": "~3.2.2",
+        "node-red-contrib-modbus": "~5.23.2"
 
     },
     "engines": {
