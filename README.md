@@ -1,27 +1,31 @@
 # Node-red docker build for Openshift by Buildings.Evolved.
-
+## Build
 The docker commands to build and execute the container are as follows:
-
+```shell script
 sudo docker build --rm --no-cache --tag testing:node-red-build .
+```
+...where the testing:node-red-build should be unique. Note that Openshift takes care of these elements inherently.
 
-This will create an image from source, the source being the dockerfile and associated config json files. The Dockerfile will copy in the configs to the image including packages.json, flows.json.
+The above command will create an image from source where the source is the Dockerfile and associated config json files. The Dockerfile will copy in the configs to the image including package.json and flows.json.
 
-The images are viewed with
+## Images
+Are viewed using:
 ```shell script
 sudo docker image ls
 ```
 
-images can be deleted using
+Can be deleted using:
 ```shell script
-sudo docker image rm ContainerID
+sudo docker image rm <ContainerID>
 ```
 
-images can be run using
+Can be run using:
 ```shell script
 sudo docker run -d --rm -p 1880:1880 testing:node-red-build
 ```
 ...assuming that the tag/name the same as the build options
 
+## Maintenance
 Docker should remove the container on stop, so the only thing persisting is the image that was created from source. Docker can always use this command to clean up garbage
 ```shell script
 sudo docker system prune
