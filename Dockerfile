@@ -1,6 +1,7 @@
 ARG ARCH=amd64
 ARG NODE_VERSION=16
-ARG OS=buster-slim
+### ARG OS=buster-slim
+ARG OS=bullseye-slim
 ARG BUILD_DATE="$(date +"%Y-%m-%dT%H:%M:%SZ")"
 ARG TAG_SUFFIX=default
 ARG NODE_RED_VERSION=3.0.2
